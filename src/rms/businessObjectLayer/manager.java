@@ -10,10 +10,11 @@ package rms.businessObjectLayer;
  * @author Lenovo
  */
 public class manager extends employee{
-
-    public manager(int experience, int EmployeeID, int salary, String Grade, String name, int age, String address, String DOB, String CNIC) {
-        super(EmployeeID, salary, Grade, name, age, address, DOB, CNIC);
-        this.experience = experience;
+    public manager(int salary, String name, int age, String address, String DOB, String CNIC) {
+        super(salary, name, age, address, DOB, CNIC);
     }
-    int experience;
+
+    manager() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

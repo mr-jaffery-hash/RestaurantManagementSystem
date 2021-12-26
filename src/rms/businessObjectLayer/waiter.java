@@ -11,9 +11,7 @@ package rms.businessObjectLayer;
  */
 public class waiter extends employee{
 
-    public waiter(int waiterid, int EmployeeID, int salary, String Grade, String name, int age, String address, String DOB, String CNIC) {
-        super(EmployeeID, salary, Grade, name, age, address, DOB, CNIC);
-        this.waiterid = waiterid;
+    public waiter(int salary, String name, int age, String address, String DOB, String CNIC) {
+        super( salary, name, age, address, DOB, CNIC);
     }
-    int waiterid;
 }

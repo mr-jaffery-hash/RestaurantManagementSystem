@@ -58,6 +58,9 @@ public class DBImplementation {
        if(check==true){
            ManagerInterface mgi = new ManagerInterface();
            mgi.setVisible(true);
+    //public manager(int experience, int EmployeeID, int salary, String Grade, String name, int age, String address, String DOB, String CNIC) {
+
+           manager mgr = new manager()
        }
        }
        catch(Exception e){

@@ -11,8 +11,8 @@ package rms.businessObjectLayer;
  */
 public class chef extends employee{
 
-    public chef(String speciality, int chefid, Order[] orderarr, int EmployeeID, int salary, String Grade, String name, int age, String address, String DOB, String CNIC) {
-        super(EmployeeID, salary, Grade, name, age, address, DOB, CNIC);
+    public chef(String speciality, Order[] orderarr, int salary,  String name, int age, String address, String DOB, String CNIC) {
+        super(salary,  name, age, address, DOB, CNIC);
         this.speciality = speciality;
         this.chefid = chefid;
         this.orderarr = orderarr;

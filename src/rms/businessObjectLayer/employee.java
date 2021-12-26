@@ -11,14 +11,9 @@ package rms.businessObjectLayer;
  */
 public class employee extends Person{
 
-    public employee(int EmployeeID, int salary, String Grade, String name, int age, String address, String DOB, String CNIC) {
+    public employee( int salary, String name, int age, String address, String DOB, String CNIC) {
         super(name, age, address, DOB, CNIC);
-        this.EmployeeID = EmployeeID;
         this.salary = salary;
-        this.Grade = Grade;
     }
-    int EmployeeID;
-    int salary;
-    String Grade;
-    
+    int salary;    
 }

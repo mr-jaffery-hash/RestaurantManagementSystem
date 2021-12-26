@@ -32,6 +32,7 @@ public class ManagerInterface extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -101,20 +102,29 @@ public class ManagerInterface extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("28 Days Later", 1, 48)); // NOI18N
         jLabel1.setText("Manager Interface");
 
+        jLabel28.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(609, 609, 609)
+                .addGap(47, 47, 47)
+                .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(460, 460, 460)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
@@ -258,7 +268,7 @@ public class ManagerInterface extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
+                .addGap(102, 102, 102)
                 .addComponent(jLabel2)
                 .addGap(54, 54, 54)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -278,7 +288,7 @@ public class ManagerInterface extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(559, Short.MAX_VALUE))
+                .addContainerGap(573, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Assign Table", jPanel3);
@@ -767,6 +777,7 @@ public class ManagerInterface extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

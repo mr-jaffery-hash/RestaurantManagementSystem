@@ -11,8 +11,8 @@ package rms.businessObjectLayer;
  */
 public class delivery_guy extends employee{
 
-    public delivery_guy(int veh_no, int EmployeeID, int salary, String Grade, String name, int age, String address, String DOB, String CNIC) {
-        super(EmployeeID, salary, Grade, name, age, address, DOB, CNIC);
+    public delivery_guy(int veh_no, int salary, String name, int age, String address, String DOB, String CNIC) {
+        super( salary, name, age, address, DOB, CNIC);
         this.veh_no = veh_no;
     }
     int veh_no;
