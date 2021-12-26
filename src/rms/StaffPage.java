@@ -192,25 +192,25 @@ public class StaffPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        Login lgn = new Login();
+        Login lgn = new Login("C");
         lgn.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Login lgn = new Login();
+        Login lgn = new Login("DG");
         lgn.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        Login lgn = new Login();
-        lgn.setVisible(true);
+Login lgn = new Login("W");
+lgn.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        Login lgn = new Login();
+        Login lgn = new Login("M");
         lgn.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed

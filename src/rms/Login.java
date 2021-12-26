@@ -4,17 +4,34 @@
  * and open the template in the editor.
  */
 package rms;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.*;
+import java.util.Scanner;
+import rms.businessObjectLayer.DBImplementation;
+import rms.businessObjectLayer.Person;
 /**
  *
  * @author Lenovo
  */
+
+
 public class Login extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
     public Login() {
+        initComponents();
+    }
+    
+    String type =null;
+    
+    Login(String s){
+        this.type=s;
+        System.out.print(s);
         initComponents();
     }
 
@@ -33,9 +50,9 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        password = new javax.swing.JPasswordField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        username = new javax.swing.JTextPane();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,12 +72,17 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("PASSWORD");
 
-        jPasswordField1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPasswordField1.setText("jPasswordField1");
+        password.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        password.setText("jPasswordField1");
 
-        jScrollPane1.setViewportView(jTextPane1);
+        jScrollPane1.setViewportView(username);
 
         jButton1.setText("LOGIN");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -71,7 +93,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(200, 200, 200)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -95,7 +117,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(65, 65, 65)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(49, 49, 49)
                 .addComponent(jButton1)
                 .addContainerGap(65, Short.MAX_VALUE))
@@ -149,6 +171,28 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         DBImplementation DBI = new DBImplementation();
+         //System.out.print(username.getText());
+         //System.out.print(password.getText());
+         if(type=="M"){
+         DBI.loginFunctionManager(username.getText(),password.getText());
+         }
+         else if(type=="DG"){
+         DBI.loginFunctionDG(username.getText(),password.getText());
+         }
+         else if(type=="C"){
+         DBI.loginFunctionchef(username.getText(),password.getText());
+         }
+         else if(type=="C"){
+         DBI.loginFunctionwaiter(username.getText(),password.getText());
+         }
+         
+//DBI.getname();
+         
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -192,8 +236,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextPane username;
     // End of variables declaration//GEN-END:variables
 }
