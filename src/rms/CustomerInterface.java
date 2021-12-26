@@ -10,7 +10,7 @@ package rms;
  * @author Lenovo
  */
 public class CustomerInterface extends javax.swing.JFrame {
-
+    int amount=0;
     /**
      * Creates new form CustomerInterface
      */
@@ -417,10 +417,19 @@ public class CustomerInterface extends javax.swing.JFrame {
         });
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jButton27.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton27.setText("Order Now!");
+        jButton27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton27ActionPerformed(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel12.setText("Total Amount:");
@@ -565,68 +574,111 @@ public class CustomerInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+     amount=amount+70;
+     String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton26ActionPerformed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        // TODO add your handling code here:
+     amount=amount+70; 
+     String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton25ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        // TODO add your handling code here:
+     amount=amount+1700;
+     String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton24ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
+    amount=amount+750;  
+    String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton23ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        // TODO add your handling code here:
+    amount=amount+450; 
+    String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
+   amount=amount+850;  
+String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);   // TODO add your handling code here:
     }//GEN-LAST:event_jButton21ActionPerformed
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
+  amount=amount+650;  
+  String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
+   amount=amount+1200; 
+   String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton19ActionPerformed
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
+  amount=amount+780;  
+  String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
+  amount=amount+890; 
+  String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton17ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
+   amount=amount+1000; 
+   String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
+  amount=amount+890;  
+  String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
+   amount=amount+890; 
+   String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
+ amount=amount+700;  
+ String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+amount=amount+150;   
+String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+amount=amount+200;  
+String s=Integer.toString(amount);//Now it will return "string"
+        jTextField1.setText(s);// TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
+        //String s=Integer.toString(amount);//Now it will return "string"
+        //jTextField1.setText(s);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton27ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
