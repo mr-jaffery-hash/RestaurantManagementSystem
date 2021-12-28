@@ -160,14 +160,29 @@ public class CustomerInterface extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton3.setText("Reserve");
         jButton3.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton4.setText("Reserve");
         jButton4.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton5.setText("Reserve");
         jButton5.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rms/images/6.gif"))); // NOI18N
         jLabel4.setText("jLabel2");
@@ -175,6 +190,11 @@ public class CustomerInterface extends javax.swing.JFrame {
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton6.setText("Reserve");
         jButton6.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rms/images/6.gif"))); // NOI18N
         jLabel5.setText("jLabel2");
@@ -182,6 +202,11 @@ public class CustomerInterface extends javax.swing.JFrame {
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton7.setText("Reserve");
         jButton7.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rms/images/6.gif"))); // NOI18N
         jLabel6.setText("jLabel2");
@@ -192,10 +217,20 @@ public class CustomerInterface extends javax.swing.JFrame {
         jButton8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton8.setText("Reserve");
         jButton8.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton9.setText("Reserve");
         jButton9.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rms/images/6.gif"))); // NOI18N
         jLabel8.setText("jLabel2");
@@ -206,6 +241,11 @@ public class CustomerInterface extends javax.swing.JFrame {
         jButton10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton10.setText("Reserve");
         jButton10.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 153, 153)));
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -782,7 +822,18 @@ String s=Integer.toString(amount);//Now it will return "string"
        }
        catch(Exception e){
        System.out.println(e.getMessage());
-       }      
+       }  
+         try{  
+            if(jCheckBox1.isSelected()){
+                 //Class.forName=(com.mysql.jdbc.Driver);
+                    ordert.senddorder();
+      
+            }
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
         jTabbedPane1.setSelectedIndex(2);
     
     
@@ -797,7 +848,163 @@ String s=Integer.toString(amount);//Now it will return "string"
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`reserved_table`" +
+"(`tableid`," +
+"`customerid`" + "`reserved`)" +
+"VALUES('"+1+"','"+username+"','"+1+"')";
+       st.executeUpdate(sql);
+      //already registered message should be visible now
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+        
+        
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`reserved_table`" +
+"(`tableid`," +
+"`customerid`" + "`reserved`)" +
+"VALUES('"+2+"','"+username+"','"+1+"')";
+       st.executeUpdate(sql);
+      //already registered message should be visible now
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`reserved_table`" +
+"(`tableid`," +
+"`customerid`" + "`reserved`)" +
+"VALUES('"+3+"','"+username+"','"+1+"')";
+       st.executeUpdate(sql);
+      //already registered message should be visible now
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`reserved_table`" +
+"(`tableid`," +
+"`customerid`" + "`reserved`)" +
+"VALUES('"+4+"','"+username+"','"+1+"')";
+       st.executeUpdate(sql);
+      //already registered message should be visible now
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`reserved_table`" +
+"(`tableid`," +
+"`customerid`" + "`reserved`)" +
+"VALUES('"+5+"','"+username+"','"+1+"')";
+       st.executeUpdate(sql);
+      //already registered message should be visible now
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`reserved_table`" +
+"(`tableid`," +
+"`customerid`" + "`reserved`)" +
+"VALUES('"+6+"','"+username+"','"+1+"')";
+       st.executeUpdate(sql);
+      //already registered message should be visible now
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`reserved_table`" +
+"(`tableid`," +
+"`customerid`" + "`reserved`)" +
+"VALUES('"+7+"','"+username+"','"+1+"')";
+       st.executeUpdate(sql);
+      //already registered message should be visible now
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`reserved_table`" +
+"(`tableid`," +
+"`customerid`" + "`reserved`)" +
+"VALUES('"+8+"','"+username+"','"+1+"')";
+       st.executeUpdate(sql);
+      //already registered message should be visible now
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
