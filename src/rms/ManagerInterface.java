@@ -5,6 +5,11 @@
  */
 package rms;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  *
  * @author Lenovo
@@ -316,6 +321,11 @@ public class ManagerInterface extends javax.swing.JFrame {
         jLabel13.setText("Select Order No");
 
         jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox7ActionPerformed(evt);
+            }
+        });
 
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -702,6 +712,24 @@ public class ManagerInterface extends javax.swing.JFrame {
     private void jComboBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox13ActionPerformed
+
+    private void jComboBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox7ActionPerformed
+        // TODO add your handling code here:
+        /* try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="select * from chef";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+       String name=(rs.getString("name"));
+       jComboBox7.addItem(name);
+       }
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }*/
+    }//GEN-LAST:event_jComboBox7ActionPerformed
 
     /**
      * @param args the command line arguments
