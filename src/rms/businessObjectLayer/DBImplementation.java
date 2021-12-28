@@ -88,7 +88,7 @@ public class DBImplementation {
       //System.out.print(rs.getString("manager_name"));
        }
        if(check==true){
-           WaiterInterface mgi = new WaiterInterface();
+           WaiterInterface mgi = new WaiterInterface(username);
            mgi.setVisible(true);
        }
        }
@@ -117,7 +117,8 @@ public class DBImplementation {
       //System.out.print(rs.getString("manager_name"));
        }
        if(check==true){
-           Chef mgi = new Chef();
+          // Chef mgi = new Chef(username);
+          Chef mgi=new Chef(username);
            mgi.setVisible(true);
        }
        }
