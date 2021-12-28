@@ -606,7 +606,7 @@ public class CustomerInterface extends javax.swing.JFrame {
      amount=amount+70;
      String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="water";
         ordert.countitems++;
         // TODO add your handling code here:
@@ -616,7 +616,7 @@ public class CustomerInterface extends javax.swing.JFrame {
      amount=amount+70; 
      String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Fanta";
         ordert.countitems++;
     }//GEN-LAST:event_jButton25ActionPerformed
@@ -625,7 +625,7 @@ public class CustomerInterface extends javax.swing.JFrame {
      amount=amount+1700;
      String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Mutton";
         ordert.countitems++;
     }//GEN-LAST:event_jButton24ActionPerformed
@@ -634,7 +634,7 @@ public class CustomerInterface extends javax.swing.JFrame {
     amount=amount+750;  
     String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Beef Burger";
         ordert.countitems++;
     }//GEN-LAST:event_jButton23ActionPerformed
@@ -643,7 +643,7 @@ public class CustomerInterface extends javax.swing.JFrame {
     amount=amount+450; 
     String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Zinger";
         ordert.countitems++;
     }//GEN-LAST:event_jButton22ActionPerformed
@@ -652,7 +652,7 @@ public class CustomerInterface extends javax.swing.JFrame {
    amount=amount+850;  
 String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);   // TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Double Patty";
         ordert.countitems++;
     }//GEN-LAST:event_jButton21ActionPerformed
@@ -661,7 +661,7 @@ String s=Integer.toString(amount);//Now it will return "string"
   amount=amount+650;  
   String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Burger";
         ordert.countitems++;
     }//GEN-LAST:event_jButton20ActionPerformed
@@ -670,7 +670,7 @@ String s=Integer.toString(amount);//Now it will return "string"
    amount=amount+1200; 
    String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Beef Karahi";
         ordert.countitems++;
     }//GEN-LAST:event_jButton19ActionPerformed
@@ -679,7 +679,7 @@ String s=Integer.toString(amount);//Now it will return "string"
   amount=amount+780;  
   String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Beef Pulao";
         ordert.countitems++;
     }//GEN-LAST:event_jButton18ActionPerformed
@@ -688,7 +688,7 @@ String s=Integer.toString(amount);//Now it will return "string"
   amount=amount+890; 
   String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Handi";
         ordert.countitems++;
     }//GEN-LAST:event_jButton17ActionPerformed
@@ -697,7 +697,7 @@ String s=Integer.toString(amount);//Now it will return "string"
    amount=amount+1000; 
    String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Qorma";
         ordert.countitems++;
     }//GEN-LAST:event_jButton16ActionPerformed
@@ -706,7 +706,7 @@ String s=Integer.toString(amount);//Now it will return "string"
   amount=amount+890;  
   String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Achari";
         ordert.countitems++;
     }//GEN-LAST:event_jButton15ActionPerformed
@@ -715,7 +715,7 @@ String s=Integer.toString(amount);//Now it will return "string"
    amount=amount+890; 
    String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Ginger";
         ordert.countitems++;
     }//GEN-LAST:event_jButton14ActionPerformed
@@ -724,7 +724,7 @@ String s=Integer.toString(amount);//Now it will return "string"
  amount=amount+700;  
  String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Karahi";
         ordert.countitems++;
     }//GEN-LAST:event_jButton13ActionPerformed
@@ -733,7 +733,7 @@ String s=Integer.toString(amount);//Now it will return "string"
 amount=amount+150;   
 String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Pulao";
         ordert.countitems++;
     }//GEN-LAST:event_jButton12ActionPerformed
@@ -743,7 +743,7 @@ amount=amount+200;
 String s=Integer.toString(amount);//Now it will return "string"
         jTextField1.setText(s);// TODO add your handling code here:
         //NOW WE ADD THE ORDERED ITEM
-        ordert.orderno=2;
+        //ordert.orderno=2;
         ordert.items[ordert.countitems]="Biryani";
         ordert.countitems++;
         ordert.sendorder();
