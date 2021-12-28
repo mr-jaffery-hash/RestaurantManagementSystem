@@ -118,6 +118,11 @@ public class ManagerInterface extends javax.swing.JFrame {
         jLabel28.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
         jButton13.setText("Refresh");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -237,6 +242,11 @@ public class ManagerInterface extends javax.swing.JFrame {
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel5.setText("Assign Table To Waiter");
@@ -345,6 +355,11 @@ public class ManagerInterface extends javax.swing.JFrame {
         jLabel9.setText("Select Order No");
 
         jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox6ActionPerformed(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel10.setText("Assign Order To Delivery Guy");
@@ -366,6 +381,11 @@ public class ManagerInterface extends javax.swing.JFrame {
         });
 
         jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox8ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Confirm");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
@@ -485,6 +505,11 @@ public class ManagerInterface extends javax.swing.JFrame {
         });
 
         jButton10.setText("Update");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -816,20 +841,244 @@ public class ManagerInterface extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBox7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`customer_table`" +
+"(`customerid`," +
+"`tableid`)" +
+"VALUES('"+jComboBox1.getSelectedItem().toString()+"','"+jComboBox2.getSelectedItem().toString()+"')";
+       st.executeUpdate(sql);
+      
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`waiter_table`" +
+"(`waitername`," +
+"`tableid`)" +
+"VALUES('"+jComboBox3.getSelectedItem().toString()+"','"+jComboBox4.getSelectedItem().toString()+"')";
+       st.executeUpdate(sql);
+      
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
+ try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`deliveryorder`" +
+"(`deliveryid`," +
+"`orderid`)" +
+"VALUES('"+jComboBox5.getSelectedItem().toString()+"','"+jComboBox6.getSelectedItem().toString()+"')";
+       st.executeUpdate(sql);
+      
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+        try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="INSERT INTO `rms`.`cheforder`" +
+"(`chefname`," +
+"`orderid`)" +
+"VALUES('"+jComboBox7.getSelectedItem().toString()+"','"+jComboBox8.getSelectedItem().toString()+"')";
+       st.executeUpdate(sql);
+      
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+          try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="select * from chef";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+       String name=(rs.getString("name"));
+       jComboBox7.addItem(name);
+       }
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+          try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="select distinct idcustorder from custorder";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+       String name=(String)(rs.getString("idcustorder"));
+       jComboBox8.addItem(name);
+       }
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+          try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="select deliveryguyid from deliveryguy";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+       String name=(String)(rs.getString("deliveryguyid"));
+       jComboBox5.addItem(name);
+       }
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+             try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="select idcustorder from custorder";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+       String name=(String)(rs.getString("idcustorder"));
+       jComboBox6.addItem(name);
+       }
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+             
+                try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="select idCustomer from customer";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+       String name=(String)(rs.getString("idCustomer"));
+       jComboBox1.addItem(name);
+       }
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+             
+                try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="select idtable from custtable";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+       String name=(String)(rs.getString("idtable"));
+       jComboBox2.addItem(name);
+       }
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+                 try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="select name from waiter";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+       String name=(String)(rs.getString("name"));
+       jComboBox3.addItem(name);
+       }
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+           try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="select idtable from custtable";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+       String name=(String)(rs.getString("idtable"));
+       jComboBox4.addItem(name);
+       }
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }      
+             
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
+        // TODO add your handling code here:
+//         try{   
+//       //Class.forName=(com.mysql.jdbc.Driver);
+//       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+//       Statement st=con.createStatement();
+//       String sql="select * from custorder";
+//       ResultSet rs=st.executeQuery(sql);
+//       while(rs.next()){
+//       String name=(String)(rs.getString("idcustorder"));
+//       jComboBox8.addItem(name);
+//       }
+//       }
+//       catch(Exception e){
+//       System.out.println(e.getMessage());
+//       }
+    }//GEN-LAST:event_jComboBox8ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       String sql="SELECT SUM(amount) AS 'a' FROM totalamount ";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+           String temp=String.valueOf(rs.getInt("a"));
+       
+        jTextField2.setText(temp);
+      
+       }
+       
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+        //jTextField2.setText(String);
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments

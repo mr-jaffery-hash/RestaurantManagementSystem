@@ -23,7 +23,7 @@ public class DBImplementation {
     public void getname(){
      try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
        Statement st=con.createStatement();
        String sql="select * from manager";
        ResultSet rs=st.executeQuery(sql);
@@ -41,7 +41,7 @@ public class DBImplementation {
      try{
        boolean check = false;
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
        Statement st=con.createStatement();
        String sql="select * from manager";
        ResultSet rs=st.executeQuery(sql);
@@ -60,7 +60,7 @@ public class DBImplementation {
            mgi.setVisible(true);
     //public manager(int experience, int EmployeeID, int salary, String Grade, String name, int age, String address, String DOB, String CNIC) {
 
-           manager mgr = new manager()
+           //manager mgr = new manager()
        }
        }
        catch(Exception e){
@@ -73,7 +73,7 @@ public class DBImplementation {
      try{
        boolean check = false;
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
        Statement st=con.createStatement();
        String sql="select * from waiter";
        ResultSet rs=st.executeQuery(sql);
@@ -102,7 +102,7 @@ public class DBImplementation {
      try{
        boolean check = false;
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
        Statement st=con.createStatement();
        String sql="select * from chef";
        ResultSet rs=st.executeQuery(sql);
@@ -131,7 +131,7 @@ public class DBImplementation {
      try{
        boolean check = false;
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
        Statement st=con.createStatement();
        String sql="select * from deliveryguy";
        ResultSet rs=st.executeQuery(sql);

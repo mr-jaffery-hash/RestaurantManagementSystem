@@ -33,7 +33,7 @@ public class custorder {
        String sql="INSERT INTO `rms`.`custorder`" +
 "(`idcustorder`," +
 "`item`)" +
-"VALUES('"+this.orderno+"','"+items[0]+"')";
+"VALUES('"+this.orderno+"','"+items[i]+"')";
        st.executeUpdate(sql);}
     }   
        catch(Exception e){

@@ -5,6 +5,9 @@
  */
 package rms;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import rms.businessObjectLayer.custorder;
 
 /**
@@ -765,6 +768,21 @@ String s=Integer.toString(amount);//Now it will return "string"
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
         ordert.sendorder();
+         try{   
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       int name=Integer.parseInt(jTextField1.getText());
+       String sql="INSERT INTO `rms`.`totalamount`" +
+"(`amount`," +
+"VALUES('"+name+"')";
+       st.executeUpdate(sql);
+      
+      
+       }
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }      
         jTabbedPane1.setSelectedIndex(2);
     
     

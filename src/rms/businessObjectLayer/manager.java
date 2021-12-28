@@ -14,7 +14,7 @@ public class manager extends employee{
         super(salary, name, age, address, DOB, CNIC);
     }
 
-    manager() {
+    /*manager() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
 }
