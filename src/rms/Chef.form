@@ -219,21 +219,9 @@
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="2" rowCount="5">
-                <Column editable="true" title="Order ID" type="java.lang.Object">
-                  <Data value="null"/>
-                  <Data value="1"/>
-                  <Data value="3"/>
-                  <Data value="9"/>
-                  <Data value="4"/>
-                </Column>
-                <Column editable="true" title="Item" type="java.lang.Object">
-                  <Data value="null"/>
-                  <Data value="Biryani"/>
-                  <Data value="Qorma"/>
-                  <Data value="Pulao"/>
-                  <Data value="Kebab"/>
-                </Column>
+              <Table columnCount="2" rowCount="1">
+                <Column editable="true" title="Order ID" type="java.lang.Object"/>
+                <Column editable="true" title="Item" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -394,6 +382,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Load List"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

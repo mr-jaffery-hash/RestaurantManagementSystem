@@ -6,12 +6,18 @@
 package rms;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Lenovo
  */
 public class Chef extends javax.swing.JFrame {
+    
 public ActionListener al;
     /**
      * Creates new form Chef
@@ -28,6 +34,12 @@ public ActionListener al;
         
     };*/
                 }
+    String type =null;
+       public Chef(String s){
+        this.type=s;
+        System.out.print(s);
+        initComponents();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -92,11 +104,7 @@ public ActionListener al;
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {"1", "Biryani"},
-                {"3", "Qorma"},
-                {"9", "Pulao"},
-                {"4", "Kebab"}
+                {null, null}
             },
             new String [] {
                 "Order ID", "Item"
@@ -174,6 +182,11 @@ public ActionListener al;
         });
 
         jButton5.setText("Load List");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -276,6 +289,7 @@ public ActionListener al;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -294,6 +308,38 @@ public ActionListener al;
         prog3.setValue((prog3.getValue())-5);
         
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+            Statement st = con.createStatement();
+            String sql="select * from cheforder";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+           /*System.out.print("I came here");
+           System.out.print(rs.getString("manager_name").equals(username));
+           System.out.print(rs.getString("password").equals(Password));*/
+           if((rs.getString("chefname").equals(this.type)==true)){
+               String orderid= String.valueOf(rs.getInt("orderid"));
+               String item = rs.getString("itemname");
+               
+               String itemarr[] ={orderid,item};
+               DefaultTableModel tbl = (DefaultTableModel)jTable1.getModel();
+               tbl.addRow(itemarr);
+               System.out.print("done");         
+           }
+      //System.out.print(rs.getString("manager_name"));
+       }
+        }
+        catch(Exception e){
+       System.out.println(e.getMessage());
+       }
+        
+        
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
