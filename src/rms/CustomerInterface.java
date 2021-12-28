@@ -696,6 +696,7 @@ String s=Integer.toString(amount);//Now it will return "string"
 
     private void jButton27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton27ActionPerformed
     jTabbedPane1.setSelectedIndex(2);
+    
         //String s=Integer.toString(amount);//Now it will return "string"
         //jTextField1.setText(s);
         // TODO add your handling code here:
