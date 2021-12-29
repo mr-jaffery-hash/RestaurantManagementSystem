@@ -41,7 +41,26 @@ public class custorder {
        }
     
     }
+    public void senddorder(){
+    try{
+     String items[]=this.items;
+       boolean check = false;
+       System.out.print(this.orderno);
+       //Class.forName=(com.mysql.jdbc.Driver);
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Statement st=con.createStatement();
+       for(int i=0;i<this.countitems;i++){
+       String sql="INSERT INTO `rms`.`deliveryorder`" +
+"(`deliveryid`," +
+"`orderid`)" +
+"VALUES('"+this.orderno+"','"+items[i]+"')";
+       st.executeUpdate(sql);}
+    }   
+       catch(Exception e){
+       System.out.println(e.getMessage());
+       }
     
+    }
     public int orderno;
     public String items[];
     public int countitems;
