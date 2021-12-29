@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 import rms.businessObjectLayer.custorder;
+import java.sql.ResultSet;
 
 /**
  *
@@ -23,6 +24,8 @@ public class CustomerInterface extends javax.swing.JFrame {
      * Creates new form CustomerInterface
      */
     public CustomerInterface() {
+        //confirmed.setVisible(false);
+        //declined.setVisible(false);
         initComponents();
     }
 
@@ -37,6 +40,7 @@ public class CustomerInterface extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton28 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -58,6 +62,10 @@ public class CustomerInterface extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        confirmed = new javax.swing.JButton();
+        declined = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -93,20 +101,34 @@ public class CustomerInterface extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("28 Days Later", 1, 48)); // NOI18N
         jLabel1.setText("Customer Interface");
 
+        jButton28.setText("Resfresh");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(585, 585, 585)
+                .addGap(44, 44, 44)
+                .addComponent(jButton28)
+                .addGap(466, 466, 466)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton28)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -148,7 +170,7 @@ public class CustomerInterface extends javax.swing.JFrame {
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(525, Short.MAX_VALUE))
         );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/rms/images/6.gif"))); // NOI18N
@@ -247,41 +269,88 @@ public class CustomerInterface extends javax.swing.JFrame {
             }
         });
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel14.setText("Please Enter Your Name For Reservation");
+
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
+        confirmed.setForeground(new java.awt.Color(51, 204, 0));
+        confirmed.setText("Reservation Confirmed");
+        confirmed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmedActionPerformed(evt);
+            }
+        });
+
+        declined.setForeground(new java.awt.Color(255, 0, 0));
+        declined.setText("Table Already Reserved");
+        declined.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                declinedActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(146, 146, 146)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(144, 144, 144)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(148, 148, 148)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(126, 126, 126)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(146, 146, 146)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(144, 144, 144)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(148, 148, 148)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(126, 126, 126)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(379, 379, 379)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(580, 580, 580)
+                        .addComponent(confirmed))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(571, 571, 571)
+                        .addComponent(declined, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(892, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(99, 99, 99)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(confirmed)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(declined)
+                .addGap(11, 11, 11)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel8)
@@ -316,7 +385,7 @@ public class CustomerInterface extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addGap(52, 52, 52)
                             .addComponent(jButton3))))
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Reserve Table", jPanel3);
@@ -648,6 +717,9 @@ public class CustomerInterface extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    String username;
+    
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         jTabbedPane1.setSelectedIndex(0);
         // TODO add your handling code here:
@@ -852,10 +924,11 @@ String s=Integer.toString(amount);//Now it will return "string"
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        username = jTextField2.getText();
         // TODO add your handling code here:
         try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`reserved_table`" +
 "(`tableid`," +
@@ -874,10 +947,11 @@ String s=Integer.toString(amount);//Now it will return "string"
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        username = jTextField2.getText();
         // TODO add your handling code here:
          try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`reserved_table`" +
 "(`tableid`," +
@@ -893,10 +967,11 @@ String s=Integer.toString(amount);//Now it will return "string"
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        username = jTextField2.getText();
         // TODO add your handling code here:
          try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`reserved_table`" +
 "(`tableid`," +
@@ -912,10 +987,12 @@ String s=Integer.toString(amount);//Now it will return "string"
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+
+        username = jTextField2.getText();
         // TODO add your handling code here:
          try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`reserved_table`" +
 "(`tableid`," +
@@ -931,29 +1008,44 @@ String s=Integer.toString(amount);//Now it will return "string"
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        username = jTextField2.getText();
         // TODO add your handling code here:
-         try{   
+         try{  
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
-       String sql="INSERT INTO `rms`.`reserved_table`" +
-"(`tableid`," +
-"`customerid`" + "`reserved`)" +
-"VALUES('"+5+"','"+username+"','"+1+"')";
-       st.executeUpdate(sql);
-      //already registered message should be visible now
-      
+       String sql1 = "select * from reserved_table";
+       boolean ch= false;
+       //st.executeUpdate(sql1);
+       ResultSet rs=st.executeQuery(sql1);
+       while(rs.next()){
+           if((rs.getInt("tableid")==5)){
+               ch=true;
+           }
        }
+       
+       if(ch==true){
+          declined.setVisible(true);
+        
+      //already registered message should be visible now
+        }
+       if(ch==false){
+           confirmed.setVisible(true);
+           String sql="INSERT INTO `rms`.`reserved_table`" + "(`tableid`," + "`customerid`" + "`reserved`)" +"VALUES('"+5+"','"+username+"','"+1+"')";
+          st.executeQuery(sql);
+       }
+      }
        catch(Exception e){
        System.out.println(e.getMessage());
        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        username = jTextField2.getText();
+           // TODO add your handling code here:
          try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`reserved_table`" +
 "(`tableid`," +
@@ -969,10 +1061,11 @@ String s=Integer.toString(amount);//Now it will return "string"
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        username = jTextField2.getText();
         // TODO add your handling code here:
          try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`reserved_table`" +
 "(`tableid`," +
@@ -988,10 +1081,11 @@ String s=Integer.toString(amount);//Now it will return "string"
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        username = jTextField2.getText();
         // TODO add your handling code here:
          try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`reserved_table`" +
 "(`tableid`," +
@@ -1005,6 +1099,25 @@ String s=Integer.toString(amount);//Now it will return "string"
        System.out.println(e.getMessage());
        }
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void confirmedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmedActionPerformed
+
+    private void declinedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_declinedActionPerformed
+        //declined.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_declinedActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        confirmed.setVisible(false);
+        declined.setVisible(false);
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton28ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1042,6 +1155,8 @@ String s=Integer.toString(amount);//Now it will return "string"
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton confirmed;
+    private javax.swing.JButton declined;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -1062,6 +1177,7 @@ String s=Integer.toString(amount);//Now it will return "string"
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
+    private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -1075,6 +1191,7 @@ String s=Integer.toString(amount);//Now it will return "string"
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1092,5 +1209,6 @@ String s=Integer.toString(amount);//Now it will return "string"
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -313,7 +313,7 @@ public ActionListener al;
         // TODO add your handling code here:
         
         try{
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
             Statement st = con.createStatement();
             String sql="select * from cheforder";
        ResultSet rs=st.executeQuery(sql);

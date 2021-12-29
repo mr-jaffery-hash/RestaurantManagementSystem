@@ -843,7 +843,7 @@ public class ManagerInterface extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
          try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`customer_table`" +
 "(`customerid`," +
@@ -861,7 +861,7 @@ public class ManagerInterface extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`waiter_table`" +
 "(`waitername`," +
@@ -879,7 +879,7 @@ public class ManagerInterface extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
  try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`deliveryorder`" +
 "(`deliveryid`," +
@@ -898,7 +898,7 @@ public class ManagerInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`cheforder`" +
 "(`chefname`," +
@@ -917,7 +917,7 @@ public class ManagerInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
           try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="select * from chef";
        ResultSet rs=st.executeQuery(sql);
@@ -931,7 +931,7 @@ public class ManagerInterface extends javax.swing.JFrame {
        }
           try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="select distinct idcustorder from custorder";
        ResultSet rs=st.executeQuery(sql);
@@ -945,7 +945,7 @@ public class ManagerInterface extends javax.swing.JFrame {
        }
           try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="select deliveryguyid from deliveryguy";
        ResultSet rs=st.executeQuery(sql);
@@ -959,7 +959,7 @@ public class ManagerInterface extends javax.swing.JFrame {
        }
              try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="select idcustorder from custorder";
        ResultSet rs=st.executeQuery(sql);
@@ -974,7 +974,7 @@ public class ManagerInterface extends javax.swing.JFrame {
              
                 try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="select idCustomer from customer";
        ResultSet rs=st.executeQuery(sql);
@@ -989,7 +989,7 @@ public class ManagerInterface extends javax.swing.JFrame {
              
                 try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="select idtable from custtable";
        ResultSet rs=st.executeQuery(sql);
@@ -1017,7 +1017,7 @@ public class ManagerInterface extends javax.swing.JFrame {
        }
            try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="select idtable from custtable";
        ResultSet rs=st.executeQuery(sql);
@@ -1062,7 +1062,7 @@ public class ManagerInterface extends javax.swing.JFrame {
         // TODO add your handling code here:
          try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        String sql="SELECT SUM(amount) AS 'a' FROM totalamount ";
        ResultSet rs=st.executeQuery(sql);

@@ -5,6 +5,8 @@
  */
 package rms;
 
+import rms.businessObjectLayer.waiter;
+
 /**
  *
  * @author Lenovo
@@ -14,10 +16,16 @@ public class WaiterInterface extends javax.swing.JFrame {
     /**
      * Creates new form WaiterInterface
      */
+    String waitername;
     public WaiterInterface() {
         initComponents();
     }
-
+     
+    public WaiterInterface(String name){
+         initComponents();
+         this.waitername = name;
+         System.out.print(this.waitername);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

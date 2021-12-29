@@ -184,7 +184,7 @@ public class Login extends javax.swing.JFrame {
          else if(type=="C"){
          DBI.loginFunctionchef(username.getText(),password.getText());
          }
-         else if(type=="C"){
+         else if(type=="W"){
          DBI.loginFunctionwaiter(username.getText(),password.getText());
          }
          
