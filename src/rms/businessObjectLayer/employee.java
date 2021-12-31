@@ -9,11 +9,12 @@ package rms.businessObjectLayer;
  *
  * @author Lenovo
  */
-public class employee extends Person{
+public abstract class employee extends Person{
 
     public employee( int salary, String name, int age, String address, String DOB, String CNIC) {
         super(name, age, address, DOB, CNIC);
         this.salary = salary;
     }
+    abstract void setsalary();
     int salary;    
 }

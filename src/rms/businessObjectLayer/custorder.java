@@ -14,7 +14,7 @@ import rms.DeliveryGuyInterface;
  *
  * @author Haier
  */
-public class custorder {
+public class custorder implements Icustorder{
 
     public custorder(int orderno, String[] items, int countitems) {
         this.orderno = orderno;
@@ -27,7 +27,7 @@ public class custorder {
        boolean check = false;
        System.out.print(this.orderno);
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        for(int i=0;i<this.countitems;i++){
        String sql="INSERT INTO `rms`.`custorder`" +
@@ -45,15 +45,16 @@ public class custorder {
     try{
      String items[]=this.items;
        boolean check = false;
+       int del=1;
        System.out.print(this.orderno);
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        for(int i=0;i<this.countitems;i++){
        String sql="INSERT INTO `rms`.`deliveryorder`" +
 "(`deliveryid`," +
 "`orderid`)" +
-"VALUES('"+this.orderno+"','"+items[i]+"')";
+"VALUES('"+del+"','"+this.orderno+"')";
        st.executeUpdate(sql);}
     }   
        catch(Exception e){

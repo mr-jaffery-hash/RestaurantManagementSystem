@@ -18,7 +18,7 @@ import java.sql.ResultSet;
 public class CustomerInterface extends javax.swing.JFrame {
     int amount=0;
     String items[]=new String[20];
-    custorder ordert=new custorder(1,items,0);
+    custorder ordert=new custorder(5,items,0);
     int num=0;
     /**
      * Creates new form CustomerInterface
@@ -882,7 +882,7 @@ String s=Integer.toString(amount);//Now it will return "string"
         ordert.sendorder();
          try{   
        //Class.forName=(com.mysql.jdbc.Driver);
-       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","1234");
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
        Statement st=con.createStatement();
        int name=Integer.parseInt(jTextField1.getText());
        String sql="INSERT INTO `rms`.`totalamount`" +
@@ -932,7 +932,7 @@ String s=Integer.toString(amount);//Now it will return "string"
        Statement st=con.createStatement();
        String sql="INSERT INTO `rms`.`reserved_table`" +
 "(`tableid`," +
-"`customerid`" + "`reserved`)" +
+"`customerid`," + "`reserved`)" +
 "VALUES('"+1+"','"+username+"','"+1+"')";
        st.executeUpdate(sql);
       //already registered message should be visible now
@@ -1018,6 +1018,7 @@ String s=Integer.toString(amount);//Now it will return "string"
        boolean ch= false;
        //st.executeUpdate(sql1);
        ResultSet rs=st.executeQuery(sql1);
+       
        while(rs.next()){
            if((rs.getInt("tableid")==5)){
                ch=true;
@@ -1031,8 +1032,8 @@ String s=Integer.toString(amount);//Now it will return "string"
         }
        if(ch==false){
            confirmed.setVisible(true);
-           String sql="INSERT INTO `rms`.`reserved_table`" + "(`tableid`," + "`customerid`" + "`reserved`)" +"VALUES('"+5+"','"+username+"','"+1+"')";
-          st.executeQuery(sql);
+           String sql="INSERT INTO `rms`.`reserved_table`" + "(`tableid`," + "`customerid`," + "`reserved`)" +"VALUES('"+5+"','"+username+"','"+1+"')";
+          st.executeUpdate(sql);
        }
       }
        catch(Exception e){

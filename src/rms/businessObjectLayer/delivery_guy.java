@@ -15,5 +15,8 @@ public class delivery_guy extends employee{
         super( salary, name, age, address, DOB, CNIC);
         this.veh_no = veh_no;
     }
+     public void setsalary(){
+    this.salary=1200;
+    }
     int veh_no;
 }

@@ -13,6 +13,9 @@ public class manager extends employee{
     public manager(int salary, String name, int age, String address, String DOB, String CNIC) {
         super(salary, name, age, address, DOB, CNIC);
     }
+     public void setsalary(){
+    this.salary=3000;
+    }
 
     /*manager() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

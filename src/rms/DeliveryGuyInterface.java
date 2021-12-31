@@ -5,6 +5,12 @@
  */
 package rms;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Lenovo
@@ -71,15 +77,10 @@ public class DeliveryGuyInterface extends javax.swing.JFrame {
         jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"7", "Chicken Roast"},
-                {"1", "Biryani "},
-                {"2", "Biryani"},
-                {"3", "Beef Qorma"},
-                {"4", "Chicken Ginger"},
-                {"5", "Shawarma"}
+
             },
             new String [] {
-                "Order No", "Item"
+                "DeliveryGuyId", "orderno"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -161,6 +162,30 @@ public class DeliveryGuyInterface extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+         try{
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/rms","root","mohsin");
+            Statement st = con.createStatement();
+            String sql="select * from deliveryorder";
+       ResultSet rs=st.executeQuery(sql);
+       while(rs.next()){
+           /*System.out.print("I came here");
+           System.out.print(rs.getString("manager_name").equals(username));
+           System.out.print(rs.getString("password").equals(Password));*/
+           
+               String deliveryid= String.valueOf(rs.getInt("deliveryid"));
+               String orderid= String.valueOf(rs.getInt("orderid"));
+                         
+               String itemarr[] ={deliveryid,orderid};
+               DefaultTableModel tbl = (DefaultTableModel)jTable1.getModel();
+               tbl.addRow(itemarr);
+               System.out.print("done");         
+           
+      //System.out.print(rs.getString("manager_name"));
+       }
+        }
+        catch(Exception e){
+       System.out.println(e.getMessage());
+       }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

@@ -17,6 +17,9 @@ public class chef extends employee{
         this.chefid = chefid;
         this.orderarr = orderarr;
     }
+    public void setsalary(){
+    this.salary=1000;
+    }
     String speciality;
     int chefid;
     Order orderarr[];
