@@ -14,4 +14,7 @@ public class waiter extends employee{
     public waiter(int salary, String name, int age, String address, String DOB, String CNIC) {
         super( salary, name, age, address, DOB, CNIC);
     }
+     public void setsalary(){
+    this.salary=1000;
+    }
 }
